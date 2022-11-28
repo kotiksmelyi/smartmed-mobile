@@ -6,7 +6,7 @@ export function Home () {
     return (
     <>
         <Header text={'Привет, '} username={'Тимурка'}/>
-        <BodyHeader text={'Пояснение к страничке'} />
+        <BodyHeader text={'Выполняйте ежедневные рекомендации лечащего врача'} />
         <Footer />
     </>
     )
