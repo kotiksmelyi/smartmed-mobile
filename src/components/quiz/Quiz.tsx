@@ -1,15 +1,33 @@
 import { BodyHeader } from '@components/body/BodyHeader';
 import { quizData } from '@components/body/testData';
-import { Footer } from '@components/footer/Footer';
-import { Header } from '@components/header/Header';
-import { Checkbox, Radio, RadioChangeEvent } from 'antd';
+
+import { useMultiStepFormNavigation } from '@hooks/useMultiStepFormNavigation';
+
+import { Button, Checkbox, Form, Radio, RadioChangeEvent } from 'antd';
 import { CheckboxValueType } from 'antd/es/checkbox/Group';
 import TextArea from 'antd/es/input/TextArea';
-import { useState } from 'react';
+import { FC, useState } from 'react';
 
-export function Quiz() {
+const questionHeader = (
+  name: string,
+  activePage: number,
+  pageLength: number
+): string => {
+  return `${name} Вопрос ${activePage} из ${pageLength}`;
+};
+
+export const Quiz: FC = () => {
+  const { activePage, goNext } = useMultiStepFormNavigation(
+    quizData.questions.length
+  );
+
+  const finishForm = (value: any) => {
+    console.log(value);
+  };
+
   const [question, setQuestion] = useState(0);
   const [currentValue, setCurrentValue] = useState('');
+
   function questionHandler() {
     setQuestion(question + 1);
   }
@@ -24,17 +42,24 @@ export function Quiz() {
 
   return (
     <>
-      <Header text={'Ежедневная анкета'} />
       <BodyHeader
-        text={
-          `${quizData.name}` +
-          ` ` +
-          `Вопрос ` +
-          `${quizData.questions[question].number}` +
-          ` из ` +
-          `${quizData.questions.length}`
-        }
+        text={questionHeader(
+          quizData.name,
+          activePage + 1,
+          quizData.questions.length
+        )}
       />
+
+      <Form
+        name='basic'
+        labelCol={{ span: 8 }}
+        wrapperCol={{ span: 16 }}
+        initialValues={{ remember: true }}
+        onFinish={finishForm}
+        autoComplete='off'
+      >
+        <Form.Item label='Username' name='username'></Form.Item>
+      </Form>
 
       {quizData.questions[question].type === 'select' && (
         <div>
@@ -73,11 +98,10 @@ export function Quiz() {
             maxLength={250}
             placeholder={'Максимум символов: 250'}
           />
-          <button onClick={questionHandler}>Дальше</button>
+          <button onClick={goNext}>Дальше</button>
         </div>
       )}
-
-      <Footer />
+      <Button onClick={goNext}>Дальше</Button>
     </>
   );
-}
+};
