@@ -1,9 +1,11 @@
+import { Articles } from '@pages/articles/Articles';
+import { Home } from '@pages/home/Home';
+import { History } from '@pages/hostory/History';
+import { Prescription } from '@pages/prescription/Prescription';
+
 import { Route, Routes } from 'react-router-dom';
+
 import './App.scss';
-import { Articles } from './pages/articles';
-import { History } from './pages/history';
-import { Home } from './pages/home';
-import { Prescription } from './pages/prescription';
 
 function App() {
   return (
