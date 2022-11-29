@@ -7,7 +7,6 @@ export const QuizPage = () => {
     <>
       <Header text={'Ежедневная анкета'} />
       <Quiz />
-      <Footer />
     </>
   );
 };

@@ -1,12 +1,13 @@
 import { BodyHeader } from '@components/body/BodyHeader';
-import { quizData } from '@components/body/testData';
+import { SwitchFormFields } from '@components/quiz/SwitchFormFields';
 
 import { useMultiStepFormNavigation } from '@hooks/useMultiStepFormNavigation';
 
-import { Button, Checkbox, Form, Radio, RadioChangeEvent } from 'antd';
-import { CheckboxValueType } from 'antd/es/checkbox/Group';
+import { quizData } from '@utils/quiz/testData';
+
+import { Button, Checkbox, Form, Input, Radio } from 'antd';
 import TextArea from 'antd/es/input/TextArea';
-import { FC, useState } from 'react';
+import { FC } from 'react';
 
 const questionHeader = (
   name: string,
@@ -17,28 +18,13 @@ const questionHeader = (
 };
 
 export const Quiz: FC = () => {
-  const { activePage, goNext } = useMultiStepFormNavigation(
-    quizData.questions.length
-  );
+  const { activePage, goNext, goPrev, isFirstPage, isLastPage } =
+    useMultiStepFormNavigation(quizData.questions.length);
 
   const finishForm = (value: any) => {
-    console.log(value);
+    console.log('values', value);
   };
-
-  const [question, setQuestion] = useState(0);
-  const [currentValue, setCurrentValue] = useState('');
-
-  function questionHandler() {
-    setQuestion(question + 1);
-  }
-
-  function onChangeRadio(e: RadioChangeEvent) {
-    setCurrentValue(e.target.value);
-  }
-
-  function onChangeCheckbox(checkedValues: CheckboxValueType[]) {
-    console.log(checkedValues);
-  }
+  const currentQuestion = quizData.questions[activePage];
 
   return (
     <>
@@ -58,50 +44,42 @@ export const Quiz: FC = () => {
         onFinish={finishForm}
         autoComplete='off'
       >
-        <Form.Item label='Username' name='username'></Form.Item>
+        <div className='select'>
+          <h2>{currentQuestion?.text}</h2>
+          <div className='select__container'>
+            <Form.Item name={'text'}>
+              {currentQuestion.type === 'select' && (
+                <Checkbox.Group
+                  options={currentQuestion.options.map(
+                    (option: any) => option.text
+                  )}
+                />
+              )}
+
+              {currentQuestion.type === 'multiselect' && (
+                <Radio.Group>
+                  {currentQuestion.options.map((question: any) => (
+                    <Radio key={question.id} value={question.id}>
+                      {question.text}
+                    </Radio>
+                  ))}
+                </Radio.Group>
+              )}
+
+              {currentQuestion.type === 'textarea' && (
+                <TextArea
+                  rows={5}
+                  maxLength={250}
+                  placeholder={'Максимум символов: 250'}
+                />
+              )}
+            </Form.Item>
+          </div>
+        </div>
+        {!isFirstPage && <Button onClick={goPrev}>{'Назад'}</Button>}
+        {!isLastPage && <Button onClick={goNext}>Дальше</Button>}
+        {isLastPage && <Button htmlType='submit'>Отправить</Button>}
       </Form>
-
-      {quizData.questions[question].type === 'select' && (
-        <div>
-          <h1>{quizData.questions[question].text}</h1>
-          {quizData.questions[question].options.map((option) => (
-            <Radio.Group
-              onChange={onChangeRadio}
-              value={currentValue}
-              key={option.id}
-            >
-              <Radio value={option.text}>{option.text}</Radio>
-            </Radio.Group>
-          ))}
-          <button onClick={questionHandler}>Дальше</button>
-        </div>
-      )}
-
-      {quizData.questions[question].type === 'multiselect' && (
-        <div>
-          <h1>{quizData.questions[question].text}</h1>
-          <Checkbox.Group
-            onChange={onChangeCheckbox}
-            options={quizData.questions[question].options.map(
-              (option) => option.text
-            )}
-          />
-          <button onClick={questionHandler}>Дальше</button>
-        </div>
-      )}
-
-      {quizData.questions[question].type === 'textarea' && (
-        <div>
-          <h1>{quizData.questions[question].text}</h1>
-          <TextArea
-            rows={5}
-            maxLength={250}
-            placeholder={'Максимум символов: 250'}
-          />
-          <button onClick={goNext}>Дальше</button>
-        </div>
-      )}
-      <Button onClick={goNext}>Дальше</Button>
     </>
   );
 };

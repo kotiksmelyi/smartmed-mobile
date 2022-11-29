@@ -5,8 +5,8 @@ export const useMultiStepFormNavigation = (formLength: number) => {
 
   const goNext = () => {
     setActivePage((p) => {
-      if (p < formLength) return p + 1;
-      return formLength;
+      if (p < formLength - 1) return p + 1;
+      return formLength - 1;
     });
   };
 
@@ -21,7 +21,7 @@ export const useMultiStepFormNavigation = (formLength: number) => {
     activePage,
     goNext,
     goPrev,
-    isLastPage: activePage === formLength,
+    isLastPage: activePage === formLength - 1,
     isFirstPage: activePage === 0,
   };
 };
