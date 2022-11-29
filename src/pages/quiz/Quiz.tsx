@@ -37,37 +37,42 @@ export function Quiz() {
       />
 
       {quizData.questions[question].type === 'select' && (
-        <div>
-          <h1>{quizData.questions[question].text}</h1>
-          {quizData.questions[question].options.map((option) => (
-            <Radio.Group
-              onChange={onChangeRadio}
-              value={currentValue}
-              key={option.id}
-            >
-              <Radio value={option.text}>{option.text}</Radio>
-            </Radio.Group>
-          ))}
+        <div className='select'>
+          <h2>{quizData.questions[question].text}</h2>
+          <div className='select__container'>
+            {quizData.questions[question].options.map((option) => (
+              <Radio.Group
+                size='large'
+                onChange={onChangeRadio}
+                value={currentValue}
+                key={option.id}
+              >
+                <Radio value={option.text}>{option.text}</Radio>
+              </Radio.Group>
+            ))}
+          </div>
           <button onClick={questionHandler}>Дальше</button>
         </div>
       )}
 
       {quizData.questions[question].type === 'multiselect' && (
-        <div>
-          <h1>{quizData.questions[question].text}</h1>
-          <Checkbox.Group
-            onChange={onChangeCheckbox}
-            options={quizData.questions[question].options.map(
-              (option) => option.text
-            )}
-          />
+        <div className='select'>
+          <h2>{quizData.questions[question].text}</h2>
+          <div className='select__container'>
+            <Checkbox.Group
+              onChange={onChangeCheckbox}
+              options={quizData.questions[question].options.map(
+                (option) => option.text
+              )}
+            />
+          </div>
           <button onClick={questionHandler}>Дальше</button>
         </div>
       )}
 
       {quizData.questions[question].type === 'textarea' && (
-        <div>
-          <h1>{quizData.questions[question].text}</h1>
+        <div className='select'>
+          <h2>{quizData.questions[question].text}</h2>
           <TextArea
             rows={5}
             maxLength={250}
@@ -76,7 +81,6 @@ export function Quiz() {
           <button onClick={questionHandler}>Дальше</button>
         </div>
       )}
-
       <Footer />
     </>
   );
