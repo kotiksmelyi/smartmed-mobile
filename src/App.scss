@@ -18,6 +18,8 @@ h1 {
 }
 h2 {
     font-size: 5vmin;
+    color: black;
+    font-weight: 700;
 }
 h3 {
     font-size: 4vmin;
@@ -31,6 +33,7 @@ h3 {
     display: flex;
     flex-direction: column;
     row-gap: 3vh;
+
         .header__logo img {
             padding-top: 5vmin;
             width: 32vmin;
@@ -49,13 +52,58 @@ h3 {
         }
 }
 
-.bodyHeader {
-    background-color: $second;
-    height: 12vmin;
-    padding-left: 3vmin;
-        h3 {
-            line-height: 12vmin;
-        }
+body {
+
+    .bodyHeader {
+        background-color: $second;
+        height: 12vmin;
+        padding-left: 3vmin;
+            h3 {
+                line-height: 12vmin;
+            }
+    }
+
+    .select {
+        display: flex;
+        flex-direction: column;
+        margin-left: 3vmin;
+        padding-top: 5vmin;
+            
+            h2{
+                margin-bottom: 5vmin;
+            }
+
+            .select__container {
+                display: flex;
+                flex-direction: column;
+                background: white;
+                margin-right: 3vmin;
+                padding: 5vmin;
+                -webkit-box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.1);
+                -moz-box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.1);
+                box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.1);
+            }
+
+            span {
+                font-size: 5vmin;
+                font-weight: 500;
+            }
+
+            button {
+                background: $second;
+                border: none;
+                border-radius: 20px;
+                margin-right: 3vmin;
+                margin-top: 5%;
+                height: 14vmin;
+                width: 80%;
+                align-self: center;
+                font-size: 5vmin;
+                color: white;
+                font-weight: 700;
+            }
+
+    }
 }
 
 .footer {
@@ -71,10 +119,12 @@ h3 {
     -webkit-box-shadow: 0px -2px 10px 0px rgba(34, 60, 80, 0.1);
     -moz-box-shadow: 0px -2px 10px 0px rgba(34, 60, 80, 0.1);
     box-shadow: 0px -2px 10px 0px rgba(34, 60, 80, 0.1);
+
     img {
         width: 7vmin;
         height: 7vmin;
     }
+
     a {
         text-decoration: none;
         font-size: 3vmin;
