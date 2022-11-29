@@ -3,5 +3,6 @@ export enum RoutesUrls {
   HISTORY = '/history',
   PRESCRIPTION = '/prescription',
   ARTICLES = '/articles',
+  QUIZ = '/quiz',
   NOT_FOUND = '*',
 }
