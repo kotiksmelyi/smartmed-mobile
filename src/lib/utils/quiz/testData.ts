@@ -5,7 +5,7 @@ export const quizData = {
     {
       id: 1,
       number: 1,
-      text: 'kkek?',
+      text: 'kkek',
       type: 'select',
       options: [
         {
@@ -21,7 +21,7 @@ export const quizData = {
     {
       id: 2,
       number: 2,
-      text: 'kkok?',
+      text: 'kkok',
       type: 'multiselect',
       options: [
         {
@@ -37,7 +37,7 @@ export const quizData = {
     {
       id: 3,
       number: 3,
-      text: 'kkekeee?',
+      text: 'kkekeee',
       type: 'textarea',
       options: [],
     },
