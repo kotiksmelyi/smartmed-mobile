@@ -37,6 +37,7 @@ export const quizData = {
     {
       id: 3,
       number: 3,
+      value: 'Default value test',
       text: 'kkekeee',
       type: 'textarea',
       options: [],
