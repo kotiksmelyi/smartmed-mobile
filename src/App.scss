@@ -106,6 +106,35 @@ body {
     }
 }
 
+.ant-checkbox-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.finished {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 12vmin;
+    .button {
+                display: block;
+                background: $second;
+                border: none;
+                border-radius: 20px;
+                margin-right: 3vmin;
+                margin-top: 5%;
+                height: 14vmin;
+                width: 80%;
+                font-size: 5vmin;
+                color: white;
+                text-align: center;
+                text-decoration: none;
+                line-height: 14vmin;
+                font-weight: 700;
+    }
+}
+
 .footer {
     display: flex;
     height: max-content;
