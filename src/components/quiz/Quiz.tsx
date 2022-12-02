@@ -1,13 +1,14 @@
 import { BodyHeader } from '@components/body/BodyHeader';
+import QuizFinishView from '@components/quiz/QuizFinishView';
+import { SwitchFormFields } from '@components/quiz/SwitchFormFields';
 
 import { useMultiStepFormNavigation } from '@hooks/useMultiStepFormNavigation';
 
 import { quizData } from '@utils/quiz/testData';
 
-import { Button, Checkbox, Form, Radio } from 'antd';
-import TextArea from 'antd/es/input/TextArea';
+import { Button } from 'antd';
 import { FC, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Controller, useForm } from 'react-hook-form';
 
 const questionHeader = (
   name: string,
@@ -21,6 +22,8 @@ export const Quiz: FC = () => {
   const { activePage, goNext, goPrev, isFirstPage, isLastPage } =
     useMultiStepFormNavigation(quizData.questions.length);
 
+  const { control, handleSubmit } = useForm();
+
   const finishForm = (value: any) => {
     console.log('values', value);
     setFinished(true);
@@ -29,74 +32,40 @@ export const Quiz: FC = () => {
 
   const [finished, setFinished] = useState(false);
 
+  if (finished) return <QuizFinishView />;
+
   return (
     <>
-      {!finished && (
-        <>
-          <BodyHeader
-            text={questionHeader(
-              quizData.name,
-              activePage + 1,
-              quizData.questions.length
-            )}
-          />
-          <Form
-            name='basic'
-            labelCol={{ span: 8 }}
-            wrapperCol={{ span: 16 }}
-            initialValues={{ remember: true }}
-            onFinish={finishForm}
-            autoComplete='off'
-          >
-            <div className='select'>
-              <h2>{currentQuestion?.text}</h2>
-              <div className='select__container'>
-                <Form.Item name={'text'}>
-                  {currentQuestion.type === 'select' && (
-                    <Checkbox.Group
-                      options={currentQuestion.options.map(
-                        (option: any) => option.text
-                      )}
-                    />
-                  )}
-
-                  {currentQuestion.type === 'multiselect' && (
-                    <Radio.Group>
-                      {currentQuestion.options.map((question: any) => (
-                        <Radio key={question.id} value={question.id}>
-                          {question.text}
-                        </Radio>
-                      ))}
-                    </Radio.Group>
-                  )}
-
-                  {currentQuestion.type === 'textarea' && (
-                    <TextArea
-                      rows={5}
-                      maxLength={250}
-                      placeholder={'Максимум символов: 250'}
-                    />
-                  )}
-                </Form.Item>
-              </div>
-            </div>
-            {!isFirstPage && <Button onClick={goPrev}>{'Назад'}</Button>}
-            {!isLastPage && <Button onClick={goNext}>Дальше</Button>}
-            {isLastPage && <Button htmlType='submit'>Отправить</Button>}
-          </Form>
-        </>
-      )}
-      {finished && (
-        <>
-          <BodyHeader text={'Анкета отправлена!'} />
-          <div className='finished'>
-            <h1>Спасибо за заполнение анкеты!</h1>
-            <Link className='button' to='/'>
-              Вернуться на главную
-            </Link>
+      <BodyHeader
+        text={questionHeader(
+          quizData.name,
+          activePage + 1,
+          quizData.questions.length
+        )}
+      />
+      <form
+        noValidate={true}
+        onSubmit={handleSubmit(finishForm)}
+        autoComplete='off'
+      >
+        <div className='select'>
+          <h2>{currentQuestion?.text}</h2>
+          <div className='select__container'>
+            <Controller
+              control={control}
+              name={currentQuestion.text}
+              defaultValue={currentQuestion.value}
+              key={currentQuestion.id}
+              render={({ field }) => (
+                <SwitchFormFields field={field} question={currentQuestion} />
+              )}
+            />
           </div>
-        </>
-      )}
+        </div>
+        {!isFirstPage && <Button onClick={goPrev}>{'Назад'}</Button>}
+        {!isLastPage && <Button onClick={goNext}>Дальше</Button>}
+        {isLastPage && <Button htmlType='submit'>Отправить</Button>}
+      </form>
     </>
   );
 };
