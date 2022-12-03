@@ -6,6 +6,7 @@ $hint: #8E8E8E;
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
+    text-decoration: none;
 }
 
 body {
@@ -68,6 +69,7 @@ body {
         flex-direction: column;
         margin-left: 3vmin;
         padding-top: 5vmin;
+        margin-right: 3vmin;
             
             h2{
                 margin-bottom: 5vmin;
@@ -104,6 +106,17 @@ body {
             }
 
     }
+}
+
+.select__home {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background: white;
+                padding: 5vmin;
+                -webkit-box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.1);
+                -moz-box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.1);
+                box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.1);
 }
 
 .ant-checkbox-group {
