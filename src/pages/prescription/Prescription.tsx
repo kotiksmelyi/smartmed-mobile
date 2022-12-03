@@ -1,7 +1,10 @@
 import { BodyHeader } from '@components/body/BodyHeader';
 import { Footer } from '@components/footer/Footer';
 import { Header } from '@components/header/Header';
+
 import { Checkbox } from 'antd';
+//@ts-ignore
+import DatePicker from 'react-horizontal-datepicker';
 
 const prescriptionData = [
   {
@@ -13,9 +16,6 @@ const prescriptionData = [
     text: 'Дед пей жопку, а то получишь таблетки',
   },
 ];
-
-//@ts-ignore
-import DatePicker from 'react-horizontal-datepicker';
 
 export function Prescription() {
   return (

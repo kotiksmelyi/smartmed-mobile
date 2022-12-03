@@ -1,4 +1,4 @@
-import { Checkbox, Input, Radio } from 'antd';
+import { Checkbox, Radio } from 'antd';
 import TextArea from 'antd/es/input/TextArea';
 import { FC } from 'react';
 

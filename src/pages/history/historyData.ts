@@ -8,7 +8,7 @@ export const historyData = [
   {
     id: 2,
     date: '2022-05-27',
-    recommendations: true,
+    recommendations: false,
     quiz: true,
   },
 ];
