@@ -1,7 +1,3 @@
-import { BodyHeader } from '@components/body/BodyHeader';
-import { Footer } from '@components/footer/Footer';
-import { Header } from '@components/header/Header';
-
 import { historyData } from './historyData';
 import { DatePicker } from 'antd';
 import { Link } from 'react-router-dom';
@@ -10,8 +6,6 @@ export function History() {
   const { RangePicker } = DatePicker;
   return (
     <>
-      <Header text={'Дневник '} />
-      <BodyHeader text={'Ваши последние записи и анкеты'} />
       <div className='select__home'>
         <h5>Отобразить период:</h5>
         <RangePicker />
@@ -41,8 +35,6 @@ export function History() {
           </>
         ))}
       </div>
-
-      <Footer />
     </>
   );
 }

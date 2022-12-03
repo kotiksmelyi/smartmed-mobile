@@ -5,7 +5,10 @@ import { NotFound } from '@pages/not-found/NotFound';
 import { Prescription } from '@pages/prescription/Prescription';
 import { QuizPage } from '@pages/quiz/QuizPage';
 
-import { RoutesUrls } from '@src/lib/utils/routes';
+import ClientLayout from '@components/layout/client-layout/ClientLayout';
+import DoctorLayout from '@components/layout/doctor-layout/DoctorLayout';
+
+import { ClientUrls, DoctorUrls, GlobalUrls } from '@src/lib/utils/routes';
 
 import { Route, Routes } from 'react-router-dom';
 
@@ -15,12 +18,21 @@ function App() {
   return (
     <div className='App'>
       <Routes>
-        <Route path={RoutesUrls.HOME} element={<Home />} />
-        <Route path={RoutesUrls.QUIZ} element={<QuizPage />} />
-        <Route path={RoutesUrls.HISTORY} element={<History />} />
-        <Route path={RoutesUrls.PRESCRIPTION} element={<Prescription />} />
-        <Route path={RoutesUrls.ARTICLES} element={<Articles />} />
-        <Route path={RoutesUrls.NOT_FOUND} element={<NotFound />} />
+        <Route path={ClientUrls.MAIN} element={<ClientLayout />}>
+          <Route path={ClientUrls.HOME} element={<Home />} />
+          <Route path={ClientUrls.QUIZ} element={<QuizPage />} />
+          <Route path={ClientUrls.HISTORY} element={<History />} />
+          <Route path={ClientUrls.PRESCRIPTION} element={<Prescription />} />
+          <Route path={ClientUrls.ARTICLES} element={<Articles />} />
+        </Route>
+        <Route path={DoctorUrls.MAIN} element={<DoctorLayout />}>
+          <Route path={DoctorUrls.HOME} element={<Home />} />
+          {/*<Route path={RoutesUrls.QUIZ} element={<QuizPage />} />*/}
+          {/*<Route path={RoutesUrls.HISTORY} element={<History />} />*/}
+          {/*<Route path={RoutesUrls.PRESCRIPTION} element={<Prescription />} />*/}
+          {/*<Route path={RoutesUrls.ARTICLES} element={<Articles />} />*/}
+        </Route>
+        <Route path={GlobalUrls.NOT_FOUNT} element={<NotFound />} />
       </Routes>
     </div>
   );
