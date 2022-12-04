@@ -20,6 +20,8 @@ const prescriptionData = [
 export function Prescription() {
   return (
     <>
+      <Header text={'Назначения'} />
+      <BodyHeader text={'Отмечайте выполнение рекомендаций врача'} />
       <DatePicker color='#00ABB5' />
       <div className='select'>
         <div className='select__container'>

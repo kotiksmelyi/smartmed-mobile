@@ -26,7 +26,7 @@ function App() {
           <Route path={ClientUrls.ARTICLES} element={<Articles />} />
         </Route>
         <Route path={DoctorUrls.MAIN} element={<DoctorLayout />}>
-          <Route path={DoctorUrls.HOME} element={<Home />} />
+          {/* <Route path={DoctorUrls.HOME} element={<Home />} /> */}
           {/*<Route path={RoutesUrls.QUIZ} element={<QuizPage />} />*/}
           {/*<Route path={RoutesUrls.HISTORY} element={<History />} />*/}
           {/*<Route path={RoutesUrls.PRESCRIPTION} element={<Prescription />} />*/}

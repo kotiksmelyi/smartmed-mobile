@@ -1,3 +1,7 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 $primary: #F8F7F7;
 $second: #00ABB5;
 $hint: #8E8E8E;
@@ -25,6 +29,38 @@ h2 {
 h3 {
     font-size: 4vmin;
     color: white;
+}
+
+.ant-checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5vmin;
+}
+.ant-checkbox-group-item {
+    display: flex!important;
+    margin: 0!important;
+}
+
+.ant-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5vmin;
+}
+
+.ant-radio-wrapper {
+    display: flex!important;
+    margin: 0!important;
+}
+
+.ant-btn {
+    background: $second;
+    color: white;
+    font-weight: 600;
+    margin-left: 3vmin;
+    margin-top: 5vmin;
+    &:where(.css-dev-only-do-not-override-1v2gb4v).ant-btn-default:not(:disabled):hover {
+        color: white!important;
+    }
 }
 
 .header {
@@ -105,6 +141,13 @@ body {
                 font-weight: 700;
             }
 
+            p {
+                font-size: 5vmin;
+                font-weight: 500;
+                padding: 5vmin 0;
+                color: $hint;
+            }
+
     }
 }
 
@@ -117,11 +160,6 @@ body {
                 -webkit-box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.1);
                 -moz-box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.1);
                 box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.1);
-}
-
-.ant-checkbox-group {
-    display: flex;
-    flex-direction: column;
 }
 
 .finished {
@@ -149,6 +187,9 @@ body {
 }
 
 .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
     display: flex;
     height: max-content;
     justify-content: space-around;
