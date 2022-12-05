@@ -1,3 +1,5 @@
+import { DoctorQuiz } from '@pages/DoctorQuiz';
+import { Patients } from '@pages/Patients';
 import { Articles } from '@pages/articles/Articles';
 import { History } from '@pages/history/History';
 import { Home } from '@pages/home/Home';
@@ -26,11 +28,8 @@ function App() {
           <Route path={ClientUrls.ARTICLES} element={<Articles />} />
         </Route>
         <Route path={DoctorUrls.MAIN} element={<DoctorLayout />}>
-          {/* <Route path={DoctorUrls.HOME} element={<Home />} /> */}
-          {/*<Route path={RoutesUrls.QUIZ} element={<QuizPage />} />*/}
-          {/*<Route path={RoutesUrls.HISTORY} element={<History />} />*/}
-          {/*<Route path={RoutesUrls.PRESCRIPTION} element={<Prescription />} />*/}
-          {/*<Route path={RoutesUrls.ARTICLES} element={<Articles />} />*/}
+          <Route path={DoctorUrls.QUIZZES} element={<DoctorQuiz />} />
+          <Route path={DoctorUrls.PATIENTS} element={<Patients />} />
         </Route>
         <Route path={GlobalUrls.NOT_FOUNT} element={<NotFound />} />
       </Routes>
