@@ -9,10 +9,8 @@ export enum ClientUrls {
 export enum DoctorUrls {
   MAIN = '/doctor',
   HOME = '',
-  HISTORY = 'history',
-  PRESCRIPTION = 'prescription',
-  ARTICLES = 'articles',
-  QUIZ = 'quiz',
+  QUIZZES = '/doctor/quizzes',
+  PATIENTS = '/doctor/patients',
 }
 
 export enum GlobalUrls {
