@@ -8,7 +8,7 @@
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:react-hooks/recommended",
-        "plugin:prettier/recommended"
+        "prettier"
     ],
     "overrides": [
     ],
@@ -28,6 +28,7 @@
     },
     "rules": {
         "react/react-in-jsx-scope": "off",
-        "@typescript-eslint/ban-ts-comment": "off"
+        "@typescript-eslint/ban-ts-comment": "off",
+        "@typescript-eslint/no-explicit-any": "error"
     }
 }
