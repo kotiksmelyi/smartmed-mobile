@@ -1,4 +1,4 @@
-import { DoctorQuiz } from '@pages/DoctorQuiz';
+import { DoctorQuiz } from '@pages/DoctorQuiz/DoctorQuiz';
 import { Patients } from '@pages/Patients';
 import { Articles } from '@pages/articles/Articles';
 import { History } from '@pages/history/History';
