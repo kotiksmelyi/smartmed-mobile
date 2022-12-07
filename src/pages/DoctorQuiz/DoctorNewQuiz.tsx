@@ -12,24 +12,21 @@ export const DoctorNewQuiz: FC = () => {
       <form>
         <div className={styles.cardwrapper}>
           <BodyHeader text='Название анкеты' />
-          <input type='text' />
+          <input type='text' placeholder='Введите название анкеты' />
         </div>
 
         <div className={styles.cardwrapper}>
           <BodyHeader text='Вопрос 1' />
           <div>
-            <input type='text' />
+            <input placeholder='Текст вопроса' type='text' />
             <select>
               <option value='text'>Текст</option>
               <option value='range'>Шкала</option>
             </select>
           </div>
         </div>
-
-        <div className={styles.cardwrapper}>
-          <BodyHeader text='Название анкеты' />
-          <input type='text' />
-        </div>
+        <button>+</button>
+        <button className={styles.submit}>Сохранить</button>
       </form>
     </div>
   );

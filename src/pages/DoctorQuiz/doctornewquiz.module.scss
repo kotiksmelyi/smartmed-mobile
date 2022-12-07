@@ -25,4 +25,25 @@
             outline: none;
         }
     }
+    select {
+        border: #00ABB5 2px solid;
+        border-radius: 1vmin;
+        padding: 2vmin;
+        width: 30%;
+    }
+
+}
+
+button {
+    background-color: #00ABB5;
+    border: none;
+    margin-right: 4vmin;
+    padding: 3vmin;
+    border-radius: 2vmin;
+    color: white;
+    font-weight: 800;
+    margin-top: 5vmin;
+    &:hover {
+        background: orange;
+    }
 }
