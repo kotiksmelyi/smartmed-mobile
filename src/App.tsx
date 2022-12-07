@@ -1,8 +1,10 @@
+import { DoctorNewQuiz } from '@pages/DoctorQuiz/DoctorNewQuiz';
 import { DoctorQuiz } from '@pages/DoctorQuiz/DoctorQuiz';
 import { Patients } from '@pages/Patients';
 import { Articles } from '@pages/articles/Articles';
 import { History } from '@pages/history/History';
 import { Home } from '@pages/home/Home';
+import { LoginPage } from '@pages/login/LoginPage';
 import { NotFound } from '@pages/not-found/NotFound';
 import { Prescription } from '@pages/prescription/Prescription';
 import { QuizPage } from '@pages/quiz/QuizPage';
@@ -20,6 +22,7 @@ function App() {
   return (
     <div className='App'>
       <Routes>
+        <Route path='/login' element={<LoginPage />}></Route>
         <Route path={ClientUrls.MAIN} element={<ClientLayout />}>
           <Route path={ClientUrls.HOME} element={<Home />} />
           <Route path={ClientUrls.QUIZ} element={<QuizPage />} />
@@ -29,6 +32,7 @@ function App() {
         </Route>
         <Route path={DoctorUrls.MAIN} element={<DoctorLayout />}>
           <Route path={DoctorUrls.QUIZZES} element={<DoctorQuiz />} />
+          <Route path='/doctor/newquiz' element={<DoctorNewQuiz />} />
           <Route path={DoctorUrls.PATIENTS} element={<Patients />} />
         </Route>
         <Route path={GlobalUrls.NOT_FOUNT} element={<NotFound />} />

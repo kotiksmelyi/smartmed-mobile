@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { Link } from 'react-router-dom';
 
 import styles from './doctorquiz.module.scss';
 
@@ -22,7 +23,7 @@ export const DoctorQuiz: FC = () => {
     <div className={styles.wrapper}>
       <div className={styles.headwrapper}>
         <h1>Мои анкеты</h1>
-        <button>+</button>
+        <Link to={'/doctor/newquiz'}>+</Link>
       </div>
       {testData.map((option) => (
         <div key={option.id} className={styles.cardwrapper}>
