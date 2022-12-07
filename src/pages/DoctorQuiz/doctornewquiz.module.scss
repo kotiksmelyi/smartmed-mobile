@@ -1,0 +1,49 @@
+.wrapper {
+    margin: 5vmin;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100vh;
+}
+
+
+.cardwrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    background: white;
+    margin-top: 10vmin;
+    border-radius: 2vmin;
+    input {
+        padding: 6vmin;
+        flex-grow: 1;
+        border: none;
+        font-size: 5vmin;
+        font-weight: 800;
+        &:focus {
+            outline: none;
+        }
+    }
+    select {
+        border: #00ABB5 2px solid;
+        border-radius: 1vmin;
+        padding: 2vmin;
+        width: 30%;
+    }
+
+}
+
+button {
+    background-color: #00ABB5;
+    border: none;
+    margin-right: 4vmin;
+    padding: 3vmin;
+    border-radius: 2vmin;
+    color: white;
+    font-weight: 800;
+    margin-top: 5vmin;
+    &:hover {
+        background: orange;
+    }
+}
