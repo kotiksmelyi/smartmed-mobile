@@ -3,25 +3,27 @@ import { HomeIcon } from '@components/UI/icons/nav-icons/HomeIcon';
 import { NewsIcon } from '@components/UI/icons/nav-icons/NewsIcon';
 import { PillsIcon } from '@components/UI/icons/nav-icons/PillsIcon';
 
+import { ClientUrls } from '@utils/routes';
+
 export const footerIcons = [
   {
     name: 'Главная',
     icon: <HomeIcon />,
-    link: '/',
+    link: ClientUrls.HOME,
   },
   {
     name: 'Дневник',
     icon: <HistoryIcon />,
-    link: '/history',
+    link: ClientUrls.HISTORY,
   },
   {
     name: 'Назначения',
     icon: <PillsIcon />,
-    link: '/prescription',
+    link: ClientUrls.PRESCRIPTION,
   },
   {
     name: 'Полезные статьи',
     icon: <NewsIcon />,
-    link: '/articles',
+    link: ClientUrls.ARTICLES,
   },
 ];

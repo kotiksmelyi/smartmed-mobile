@@ -71,7 +71,7 @@ export const DoctorNewQuiz: FC = () => {
               <option value='textarea'>Текст</option>
               <option value='range'>Шкала</option>
             </select>
-
+            животных
             <div className={styles.rangewrapper}>
               <select></select>
               <RangeInput />
@@ -79,7 +79,7 @@ export const DoctorNewQuiz: FC = () => {
           </div>
         </div>
 
-        <button>+</button>
+        <button type={'button'}>+</button>
 
         <button className={styles.submit}>Сохранить</button>
       </form>

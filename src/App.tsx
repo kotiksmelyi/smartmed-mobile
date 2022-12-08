@@ -1,11 +1,12 @@
-import { DoctorNewQuiz } from '@pages/DoctorQuiz/DoctorNewQuiz';
-import { DoctorQuiz } from '@pages/DoctorQuiz/DoctorQuiz';
-import { Patients } from '@pages/patients/Patients';
 import { Articles } from '@pages/articles/Articles';
+import { DoctorNewQuiz } from '@pages/doctor-create-quiz/DoctorNewQuiz';
+import { DoctorQuiz } from '@pages/doctor-quiz/DoctorQuiz';
 import { History } from '@pages/history/History';
 import { ClientHomePage } from '@pages/home/ClientHomePage';
+import { HomePage } from '@pages/home/HomePage';
 import { LoginPage } from '@pages/login/LoginPage';
 import { NotFound } from '@pages/not-found/NotFound';
+import { Patients } from '@pages/patients/Patients';
 import { Prescription } from '@pages/prescription/Prescription';
 import { QuizPage } from '@pages/quiz/QuizPage';
 
@@ -21,7 +22,7 @@ import { $userRole } from '@store/auth/authStore';
 import { ClientUrls, DoctorUrls, GlobalUrls } from '@src/lib/utils/routes';
 
 import { useStore } from 'effector-react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import './App.scss';
 
@@ -42,13 +43,14 @@ function App() {
         )}
         {role === UserRole.doctor && (
           <Route path={DoctorUrls.MAIN} element={<DoctorLayout />}>
-            <Route path={DoctorUrls.QUIZZES} element={<DoctorQuiz />} />
-            <Route path='/doctor/newquiz' element={<DoctorNewQuiz />} />
+            <Route path={DoctorUrls.HOME} element={<DoctorQuiz />} />
+            <Route path={DoctorUrls.CREAT_QUIZ} element={<DoctorNewQuiz />} />
             <Route path={DoctorUrls.PATIENTS} element={<Patients />} />
           </Route>
         )}
 
         <Route path={GlobalUrls.LOGIN} element={<LoginPage />}></Route>
+        <Route path={GlobalUrls.MAIN} element={<HomePage />}></Route>
         <Route path={GlobalUrls.NOT_FOUNT} element={<NotFound />} />
       </Routes>
     </div>

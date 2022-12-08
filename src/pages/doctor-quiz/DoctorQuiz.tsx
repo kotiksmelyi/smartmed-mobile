@@ -1,3 +1,5 @@
+import { DoctorUrls } from '@utils/routes';
+
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -23,7 +25,7 @@ export const DoctorQuiz: FC = () => {
     <div className={styles.wrapper}>
       <div className={styles.headwrapper}>
         <h1>Мои анкеты</h1>
-        <Link to={'/doctor/newquiz'}>+</Link>
+        <Link to={DoctorUrls.CREAT_QUIZ}>+</Link>
       </div>
       {testData.map((option) => (
         <div key={option.id} className={styles.cardwrapper}>

@@ -20,7 +20,7 @@ const DoctorLayout: FC = () => {
         </div>
         <div className={styles.link_container}>
           {doctorLayoutData.map((menu, index) => (
-            <Link to={`/doctor${menu.path}`} key={index}>
+            <Link to={menu.path} key={index}>
               <div>
                 {menu.icon}
                 <span>{menu.title}</span>
