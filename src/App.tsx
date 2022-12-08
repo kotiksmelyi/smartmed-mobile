@@ -1,6 +1,6 @@
-import { DoctorNewQuiz } from '@pages/DoctorQuiz/DoctorNewQuiz';
-import { DoctorQuiz } from '@pages/DoctorQuiz/DoctorQuiz';
 import { Articles } from '@pages/articles/Articles';
+import { DoctorNewQuiz } from '@pages/doctor-create-quiz/DoctorNewQuiz';
+import { DoctorQuiz } from '@pages/doctor-quiz/DoctorQuiz';
 import { History } from '@pages/history/History';
 import { ClientHomePage } from '@pages/home/ClientHomePage';
 import { HomePage } from '@pages/home/HomePage';
