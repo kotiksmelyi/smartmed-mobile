@@ -1,8 +1,6 @@
 import { AppLogo } from '@components/UI/icons/logo/AppLogo';
 import { NotificationIcon } from '@components/UI/icons/notification/NotificationIcon';
 
-import { DoctorUrls } from '@utils/routes';
-
 import testImg from '@assets/test-img.jpg';
 
 import { doctorLayoutData } from './doctor-layout-data';
