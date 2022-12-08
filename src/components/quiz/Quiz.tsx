@@ -54,7 +54,6 @@ export const Quiz: FC = () => {
             <Controller
               control={control}
               name={currentQuestion.text}
-              defaultValue={currentQuestion.value}
               key={currentQuestion.id}
               render={({ field }) => (
                 <SwitchFormFields field={field} question={currentQuestion} />
