@@ -1,8 +1,12 @@
+import { AppLogo } from '@components/UI/icons/logo/AppLogo';
+
+import testImg from '@assets/test-img.jpg';
+
 export function Header(header: { text: string; username?: string }) {
   return (
     <div className='header'>
       <div className='header__logo'>
-        <img src='../logos/logo-smartmed.svg' alt='smartmed' />
+        <AppLogo />
       </div>
 
       <div className='header__user'>
@@ -10,7 +14,7 @@ export function Header(header: { text: string; username?: string }) {
           {header.text}
           <span>{header.username}</span>
         </h1>
-        <img src='../logos/test-img.jpg' alt='' />
+        <img src={testImg} alt='' />
       </div>
     </div>
   );

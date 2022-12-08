@@ -1,4 +1,13 @@
+import { AppLogo } from '@components/UI/icons/logo/AppLogo';
+import { NotificationIcon } from '@components/UI/icons/notification/NotificationIcon';
+
+import { DoctorUrls } from '@utils/routes';
+
+import testImg from '@assets/test-img.jpg';
+
 import { doctorLayoutData } from './doctor-layout-data';
+import { UserOutlined } from '@ant-design/icons';
+import { Avatar } from 'antd';
 import { FC } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
@@ -8,24 +17,33 @@ const DoctorLayout: FC = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.aside}>
-        <img className={styles.aside_logo} src='./logos/logo-smartmed.svg' />
+        <div className={styles.aside_logo}>
+          <AppLogo />
+        </div>
         <div className={styles.link_container}>
           {doctorLayoutData.map((menu, index) => (
             <Link to={`/doctor${menu.path}`} key={index}>
-              <img src={`./logos/${menu.src}.svg`} />
-              <span>{menu.title}</span>
+              <div>
+                {menu.icon}
+                <span>{menu.title}</span>
+              </div>
             </Link>
           ))}
         </div>
       </div>
       <div className={styles.main}>
         <nav className={styles.nav}>
-          <img className={styles.avatar} src='./logos/test-img.jpg' />
+          <Avatar
+            className={styles.avatar}
+            size='large'
+            src={testImg}
+            icon={<UserOutlined />}
+          />
           <div className={styles.avatar_text}>
             <h5>Виталий Врач</h5>
             <a>Выйти</a>
           </div>
-          <img className={styles.bell} src='./logos/notification.svg' alt='' />
+          <NotificationIcon className={styles.bell} />
           <div className={styles.bell_counter}>1</div>
         </nav>
         <Outlet />

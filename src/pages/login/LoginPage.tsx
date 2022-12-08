@@ -1,3 +1,5 @@
+import { AppLogo } from '@components/UI/icons/logo/AppLogo';
+
 import { FC } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 
@@ -10,7 +12,9 @@ export const LoginPage: FC = () => {
 
   return (
     <div className={styles.wrapper}>
-      <img className={styles.logo} src='./logos/logo-smartmed.svg' />
+      <div className={styles.logo}>
+        <AppLogo />
+      </div>
       <h1>Вход</h1>
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <input type='text' {...register('login')} />

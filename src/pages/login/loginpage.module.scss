@@ -2,11 +2,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    img {
+    .logo > svg {
         width: 50vmin;
         height: 50vmin;
     }
-    
+
 .form {
     margin-top: 5vmin;
     display: flex;

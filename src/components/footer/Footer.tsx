@@ -7,7 +7,7 @@ export function Footer() {
     <div className='footer'>
       {footerIcons.map((e, index) => (
         <Link to={`${e.link}`} key={index}>
-          <img src={`./logos/${e.src}`} />
+          {e.icon}
           <p>{e.name}</p>
         </Link>
       ))}
