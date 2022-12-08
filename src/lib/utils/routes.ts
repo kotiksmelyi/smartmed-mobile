@@ -15,4 +15,5 @@ export enum DoctorUrls {
 
 export enum GlobalUrls {
   NOT_FOUNT = '*',
+  LOGIN = 'login',
 }
