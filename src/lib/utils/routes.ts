@@ -1,19 +1,20 @@
 export enum ClientUrls {
-  MAIN = '/',
+  MAIN = '/client',
   HOME = '',
-  HISTORY = 'history',
-  PRESCRIPTION = 'prescription',
-  ARTICLES = 'articles',
-  QUIZ = 'quiz',
+  HISTORY = '/client/history',
+  PRESCRIPTION = '/client/prescription',
+  ARTICLES = '/client/articles',
+  QUIZ = '/client/quiz',
 }
 export enum DoctorUrls {
   MAIN = '/doctor',
   HOME = '',
-  QUIZZES = '/doctor/quizzes',
   PATIENTS = '/doctor/patients',
+  CREAT_QUIZ = '/doctor/create-quiz',
 }
 
 export enum GlobalUrls {
   NOT_FOUNT = '*',
   LOGIN = 'login',
+  MAIN = '',
 }

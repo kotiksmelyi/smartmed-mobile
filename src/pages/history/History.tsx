@@ -1,6 +1,8 @@
 import { BodyHeader } from '@components/body/BodyHeader';
 import { Header } from '@components/header/Header';
 
+import { ClientUrls } from '@utils/routes';
+
 import { historyData } from './historyData';
 import { DatePicker } from 'antd';
 import { Link } from 'react-router-dom';
@@ -19,7 +21,7 @@ export function History() {
         {historyData.map((note) => (
           <>
             <p>{note.date}</p>
-            <Link to={'/prescription'}>
+            <Link to={ClientUrls.PRESCRIPTION}>
               <div className='select__container' key={note.id}>
                 {note.recommendations ? (
                   <h1>Рекомендации выполнены</h1>
@@ -28,7 +30,7 @@ export function History() {
                 )}
               </div>
             </Link>
-            <Link to={'/quiz'}>
+            <Link to={ClientUrls.QUIZ}>
               <div className='select__container'>
                 {note.quiz ? (
                   <h1>Анкета заполнена</h1>

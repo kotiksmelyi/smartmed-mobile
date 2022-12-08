@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 export const useAuthNavigate = () => {
   const nav = useNavigate();
 
-  return (role: UserRole) => {
+  return (role: UserRole | null) => {
     if (role === UserRole.doctor) {
       nav(DoctorUrls.MAIN);
     }
