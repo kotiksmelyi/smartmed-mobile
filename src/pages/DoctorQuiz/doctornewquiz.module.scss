@@ -16,10 +16,10 @@
     margin-top: 10vmin;
     border-radius: 2vmin;
     input {
-        padding: 6vmin;
+        padding: 5vmin;
         flex-grow: 1;
         border: none;
-        font-size: 5vmin;
+        font-size: 4vmin;
         font-weight: 800;
         &:focus {
             outline: none;
@@ -46,4 +46,10 @@ button {
     &:hover {
         background: orange;
     }
+}
+
+.rangewrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 5vmin;
 }
