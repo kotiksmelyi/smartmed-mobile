@@ -1,46 +1,39 @@
 export const quizData = {
-  name: 'анектОчка',
-  description: '',
+  name: 'string',
+  id: '3fa85f64-5717-4562-b3fc-2c963f66afa6',
   questions: [
     {
-      id: 1,
-      number: 1,
-      text: 'kkek',
-      type: 'select',
-      options: [
-        {
-          id: 53,
-          text: 'kek',
-        },
-        {
-          id: 23,
-          text: 'hehe',
-        },
-      ],
-    },
-    {
-      id: 2,
-      number: 2,
-      text: 'kkok',
-      type: 'multiselect',
-      options: [
-        {
-          id: 53,
-          text: 'kek2',
-        },
-        {
-          id: 23,
-          text: 'hehe2',
-        },
-      ],
-    },
-    {
-      id: 3,
-      number: 3,
-      value: 'Default value test',
-      text: 'kkekeee',
       type: 'textarea',
-      options: [],
+      text: 'string',
+      order: 0,
+      feature: 'string',
+      min_label: 'string',
+      max_label: 'string',
+      min_value: 0,
+      max_value: 0,
+      id: '3fa85f64-5717-4562-b3fc-2c963f66afa6',
+    },
+    {
+      type: 'range',
+      text: 'string',
+      order: 1,
+      feature: 'string',
+      min_label: 'string',
+      max_label: 'string',
+      min_value: 0,
+      max_value: 10,
+      id: '3fa85f64-5717-4562-b3fc-2c963f66afa6',
+    },
+    {
+      type: 'range',
+      text: 'string',
+      order: 2,
+      feature: 'string',
+      min_label: 'string',
+      max_label: 'string',
+      min_value: 0,
+      max_value: 5,
+      id: '3fa85f64-5717-4562-b3fc-2c963f66afa6',
     },
   ],
 };
