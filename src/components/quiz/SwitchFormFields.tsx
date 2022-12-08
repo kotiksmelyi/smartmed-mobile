@@ -1,4 +1,4 @@
-import { Checkbox, Radio } from 'antd';
+import { Slider } from 'antd';
 import TextArea from 'antd/es/input/TextArea';
 import { FC } from 'react';
 
@@ -7,20 +7,21 @@ type Props = {
   field: any;
 };
 export const SwitchFormFields: FC<Props> = ({ question, field }) => {
+  const marks = {
+    [question.min_value]: question.min_label,
+    [question.max_value]: question.max_label,
+  };
+
   switch (question.type) {
-    case 'multiselect':
+    case 'range':
       return (
-        <Checkbox.Group
-          {...field}
-          options={question.options.map((option: any) => option.text)}
-        />
-      );
-    case 'select':
-      return (
-        <Radio.Group
-          {...field}
-          options={question.options.map((option: any) => option.text)}
-        />
+        <>
+          <Slider
+            min={question.min_value}
+            max={question.max_value}
+            marks={marks}
+          />
+        </>
       );
     case 'textarea':
       return (
