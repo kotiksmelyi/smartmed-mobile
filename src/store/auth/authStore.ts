@@ -4,11 +4,12 @@ import { urls } from '@server/urls';
 import { JwtType, LoginApiProps, UserRole } from '@type/auth/authType';
 
 import { createEffect, createEvent, createStore } from 'effector';
+import qs from 'qs';
 
 export const LOCAL_TOKEN_KEY = 'token';
 
 export const loginFx = createEffect(async (props: LoginApiProps) => {
-  const res = await http.get<JwtType>(urls.login(), { params: props });
+  const res = await http.post<JwtType>(urls.login(), qs.stringify(props));
   localStorage.setItem(LOCAL_TOKEN_KEY, JSON.stringify(res.data));
   return res.data;
 });

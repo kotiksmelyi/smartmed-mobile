@@ -3,7 +3,7 @@ import { DoctorQuiz } from '@pages/DoctorQuiz/DoctorQuiz';
 import { Patients } from '@pages/Patients';
 import { Articles } from '@pages/articles/Articles';
 import { History } from '@pages/history/History';
-import { Home } from '@pages/home/Home';
+import { ClientHomePage } from '@pages/home/ClientHomePage';
 import { LoginPage } from '@pages/login/LoginPage';
 import { NotFound } from '@pages/not-found/NotFound';
 import { Prescription } from '@pages/prescription/Prescription';
@@ -12,7 +12,7 @@ import { QuizPage } from '@pages/quiz/QuizPage';
 import ClientLayout from '@components/layout/client-layout/ClientLayout';
 import DoctorLayout from '@components/layout/doctor-layout/DoctorLayout';
 
-import { useAuth } from '@hooks/useAuth';
+import { useAuth } from '@hooks/auth/useAuth';
 
 import { UserRole } from '@type/auth/authType';
 
@@ -21,7 +21,7 @@ import { $userRole } from '@store/auth/authStore';
 import { ClientUrls, DoctorUrls, GlobalUrls } from '@src/lib/utils/routes';
 
 import { useStore } from 'effector-react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
 import './App.scss';
 
@@ -33,7 +33,7 @@ function App() {
       <Routes>
         {role === UserRole.client && (
           <Route path={ClientUrls.MAIN} element={<ClientLayout />}>
-            <Route path={ClientUrls.HOME} element={<Home />} />
+            <Route path={ClientUrls.HOME} element={<ClientHomePage />} />
             <Route path={ClientUrls.QUIZ} element={<QuizPage />} />
             <Route path={ClientUrls.HISTORY} element={<History />} />
             <Route path={ClientUrls.PRESCRIPTION} element={<Prescription />} />

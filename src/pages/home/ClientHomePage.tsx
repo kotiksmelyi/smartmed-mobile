@@ -2,7 +2,7 @@ import { BodyHeader } from '@components/body/BodyHeader';
 import { BodyButton } from '@components/body/button';
 import { Header } from '@components/header/Header';
 
-export function Home() {
+export function ClientHomePage() {
   return (
     <>
       <Header text={'Привет, '} username={'Тимурка'} />
