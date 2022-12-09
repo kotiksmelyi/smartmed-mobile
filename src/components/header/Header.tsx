@@ -14,7 +14,7 @@ export function Header(header: { text: string; username?: string }) {
           {header.text}
           <span>{header.username}</span>
         </h1>
-        <img src={testImg} alt='' />
+        <img src='https://i08.fotocdn.net/s126/672c94231cc731f1/gallery_xl/2857412975.jpg' />
       </div>
     </div>
   );
