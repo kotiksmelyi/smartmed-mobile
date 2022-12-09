@@ -15,3 +15,13 @@ export interface IQuizData {
     }
   ];
 }
+
+export interface QuizCompletedType {
+  quiz_id: string;
+  completed_questions: CompletedQuestionsType[];
+}
+
+export interface CompletedQuestionsType {
+  question_id: string;
+  answer: string;
+}

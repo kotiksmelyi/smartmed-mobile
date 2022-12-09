@@ -5,7 +5,7 @@ export const QuizPage = () => {
   return (
     <>
       <Header text={'Ежедневная анкета'} />
-      <Quiz />
+      <Quiz quizId={'a7a991f0-acda-4fb0-99ab-cee7ac8be2c2'} />
     </>
   );
 };

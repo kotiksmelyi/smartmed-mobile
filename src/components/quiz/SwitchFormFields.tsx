@@ -20,6 +20,7 @@ export const SwitchFormFields: FC<Props> = ({ question, field }) => {
             min={question.min_value}
             max={question.max_value}
             marks={marks}
+            {...field}
           />
         </>
       );

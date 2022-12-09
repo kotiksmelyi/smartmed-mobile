@@ -1,3 +1,5 @@
+import { JwtType } from '@type/auth/authType';
+
 import { LOCAL_TOKEN_KEY } from '@store/auth/authStore';
 
 import axios from 'axios';
@@ -8,9 +10,10 @@ export const http = axios.create({ baseURL: BASE_URL });
 
 http.interceptors.request.use(async (config) => {
   try {
-    const token = localStorage.getItem(LOCAL_TOKEN_KEY);
+    const tokenString = localStorage.getItem(LOCAL_TOKEN_KEY);
+    const token: JwtType = JSON.parse(tokenString || '');
     if (token) {
-      config.headers!.Authorization = 'TOKEN ' + token;
+      config.headers!.Authorization = 'Bearer ' + token.access_token;
     }
   } catch (e) {
     console.log('DB GET TOKEN: ', e);

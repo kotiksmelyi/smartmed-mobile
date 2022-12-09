@@ -13,7 +13,7 @@ export function ClientHomePage() {
           text={'Отметить приём лекарств'}
           path={'client/prescription'}
         />
-        <BodyButton text={'Записаться к врачу'} path={'*'} />
+        {/*<BodyButton text={'Записаться к врачу'} path={'*'} />*/}
         <BodyButton text={'Статьи для Вас'} path={'client/articles'} />
       </div>
     </>
