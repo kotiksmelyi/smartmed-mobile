@@ -8,10 +8,13 @@ export function ClientHomePage() {
       <Header text={'Привет, '} username={'Тимурка'} />
       <BodyHeader text={'Выполняйте рекомендации лечащего врача'} />
       <div className='select'>
-        <BodyButton text={'Заполнить анкету'} path={'quiz'} />
-        <BodyButton text={'Отметить приём лекарств'} path={'prescription'} />
+        <BodyButton text={'Заполнить анкету'} path={'client/quiz'} />
+        <BodyButton
+          text={'Отметить приём лекарств'}
+          path={'client/prescription'}
+        />
         <BodyButton text={'Записаться к врачу'} path={'*'} />
-        <BodyButton text={'Статьи для Вас'} path={'articles'} />
+        <BodyButton text={'Статьи для Вас'} path={'client/articles'} />
       </div>
     </>
   );

@@ -1,39 +1,17 @@
-export const quizData = {
-  name: 'string',
-  id: '3fa85f64-5717-4562-b3fc-2c963f66afa6',
+export interface IQuizData {
+  name: 'string';
+  id: 'string';
   questions: [
     {
-      type: 'textarea',
-      text: 'string',
-      order: 0,
-      feature: 'string',
-      min_label: 'string',
-      max_label: 'string',
-      min_value: 0,
-      max_value: 0,
-      id: '3fa85f64-5717-4562-b3fc-2c963f66afa6',
-    },
-    {
-      type: 'range',
-      text: 'string',
-      order: 1,
-      feature: 'string',
-      min_label: 'string',
-      max_label: 'string',
-      min_value: 0,
-      max_value: 10,
-      id: '3fa85f64-5717-4562-b3fc-2c963f66afa6',
-    },
-    {
-      type: 'range',
-      text: 'string',
-      order: 2,
-      feature: 'string',
-      min_label: 'string',
-      max_label: 'string',
-      min_value: 0,
-      max_value: 5,
-      id: '3fa85f64-5717-4562-b3fc-2c963f66afa6',
-    },
-  ],
-};
+      type: 'string';
+      text: 'string';
+      order: number;
+      feature: 'string';
+      min_label: 'string';
+      max_label: 'string';
+      min_value: number;
+      max_value: number;
+      id: 'string';
+    }
+  ];
+}
