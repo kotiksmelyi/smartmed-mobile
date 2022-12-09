@@ -9,11 +9,11 @@ import DatePicker from 'react-horizontal-datepicker';
 const prescriptionData = [
   {
     id: 1,
-    text: 'Дед пей таблетки, а то получишь по жопе',
+    text: 'Полоскание горла 3 раза в день',
   },
   {
     id: 2,
-    text: 'Дед пей жопку, а то получишь таблетки',
+    text: 'Гексорал 2 раза в день',
   },
 ];
 

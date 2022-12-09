@@ -5,7 +5,7 @@ import { Header } from '@components/header/Header';
 export function ClientHomePage() {
   return (
     <>
-      <Header text={'Привет, '} username={'Тимурка'} />
+      <Header text={'Привет, '} username={'Тимур'} />
       <BodyHeader text={'Выполняйте рекомендации лечащего врача'} />
       <div className='select'>
         <BodyButton text={'Заполнить анкету'} path={'client/quiz'} />

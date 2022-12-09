@@ -12,6 +12,7 @@ export enum DoctorUrls {
   HOME = '',
   PATIENTS = '/doctor/patients',
   CREAT_QUIZ = '/doctor/create-quiz',
+  PATIENTINFO = '/doctor/patientinfo',
 }
 
 export enum GlobalUrls {

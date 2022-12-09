@@ -26,6 +26,7 @@ import { useStore } from 'effector-react';
 import { Route, Routes } from 'react-router-dom';
 
 import './App.scss';
+import { PatientInfo } from '@pages/patients/PatientInfo';
 
 function App() {
   useAuth();
@@ -51,6 +52,7 @@ function App() {
             <Route path={DoctorUrls.HOME} element={<DoctorQuiz />} />
             <Route path={DoctorUrls.CREAT_QUIZ} element={<DoctorNewQuiz />} />
             <Route path={DoctorUrls.PATIENTS} element={<Patients />} />
+            <Route path={DoctorUrls.PATIENTINFO} element={<PatientInfo />} />
           </Route>
         )}
 
