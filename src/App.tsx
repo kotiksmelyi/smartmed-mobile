@@ -2,6 +2,7 @@ import { Articles } from '@pages/articles/Articles';
 import { DoctorNewQuiz } from '@pages/doctor-create-quiz/DoctorNewQuiz';
 import { DoctorQuiz } from '@pages/doctor-quiz/DoctorQuiz';
 import { History } from '@pages/history/History';
+import { HistoryDetail } from '@pages/history/HistoryDetail';
 import { ClientHomePage } from '@pages/home/ClientHomePage';
 import { HomePage } from '@pages/home/HomePage';
 import { LoginPage } from '@pages/login/LoginPage';
@@ -37,6 +38,10 @@ function App() {
             <Route path={ClientUrls.HOME} element={<ClientHomePage />} />
             <Route path={ClientUrls.QUIZ} element={<QuizPage />} />
             <Route path={ClientUrls.HISTORY} element={<History />} />
+            <Route
+              path={ClientUrls.HISTORY_DETAIL}
+              element={<HistoryDetail />}
+            />
             <Route path={ClientUrls.PRESCRIPTION} element={<Prescription />} />
             <Route path={ClientUrls.ARTICLES} element={<Articles />} />
           </Route>
