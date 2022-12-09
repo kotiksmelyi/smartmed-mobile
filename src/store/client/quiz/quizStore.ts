@@ -23,8 +23,10 @@ export const sendQuizAnswersFx = createEffect(
   }
 );
 
-export const fetchQuizHistoryFx = createEffect(async () => {
-  const res = await http.get(urls.quizCompleted());
+export const fetchQuizHistoryFx = createEffect(async (userId?: string) => {
+  const res = await http.get(urls.quizCompleted(), {
+    params: { user_id: userId },
+  });
   return res.data;
 });
 

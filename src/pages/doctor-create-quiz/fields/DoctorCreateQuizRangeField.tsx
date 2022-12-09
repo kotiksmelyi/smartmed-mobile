@@ -18,37 +18,36 @@ export const DoctorCreateQuizRangeField: FC<Props> = ({ index, question }) => {
   return (
     <div>
       <div>
-        <span>min_value</span>
-        <input
-          defaultValue={question.min_value}
-          onChange={handelInputChange('min_value')}
-          type='number'
-        />
-      </div>
-      <div>
-        <span>max_value</span>
-        <input
-          defaultValue={question.max_value}
-          onChange={handelInputChange('max_value')}
-          type='number'
-        />
-      </div>
-
-      <div>
-        <span>min_label</span>
+        <span>подпись к минимальному значению</span>
         <input
           defaultValue={question.min_label}
           onChange={handelInputChange('min_label')}
           type='text'
         />
       </div>
+      <div>
+        <span>минимальное значение</span>
+        <input
+          defaultValue={question.min_value}
+          onChange={handelInputChange('min_value')}
+          type='number'
+        />
+      </div>
 
       <div>
-        <span>max_label</span>
+        <span>подпись к максимальному значению</span>
         <input
           defaultValue={question.max_label}
           onChange={handelInputChange('max_label')}
           type='text'
+        />
+      </div>
+      <div>
+        <span>максимальное значение</span>
+        <input
+          defaultValue={question.max_value}
+          onChange={handelInputChange('max_value')}
+          type='number'
         />
       </div>
     </div>

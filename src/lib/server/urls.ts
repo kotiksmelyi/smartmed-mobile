@@ -11,4 +11,8 @@ export const urls = {
 
   // articles
   articles: () => '/articles',
+
+  // users
+  users: () => '/users',
+  userId: (id: string) => `/users/${id}`,
 };

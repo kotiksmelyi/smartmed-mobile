@@ -1,6 +1,12 @@
 import { DoctorUrls } from '@utils/routes';
 
-import { FC } from 'react';
+import {
+  $patientsList,
+  fetchPatientsListFx,
+} from '@store/patients/patientsStore';
+
+import { useStore } from 'effector-react';
+import { FC, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import styles from './patients.module.scss';
@@ -19,20 +25,25 @@ const testData = [
 ];
 
 export const Patients: FC = () => {
+  useEffect(() => {
+    fetchPatientsListFx().then();
+  }, []);
+
+  const users = useStore($patientsList);
   return (
     <div className={styles.wrapper}>
       <div className={styles.headwrapper}>
         <h1>Пациенты</h1>
         {/*<Link to={'*'}>+</Link>*/}
       </div>
-      {testData.map((option, index) => (
+      {users.map((user, index) => (
         <div key={index} className={styles.cardwrapper}>
           <div>
-            <h4>{option.name}</h4>
-            <p>{option.birthday}</p>
+            <h4>{user.name}</h4>
+            <p>{user.birthdate}</p>
           </div>
-          <h4>{option.diagnosis}</h4>
-          <Link to={DoctorUrls.PATIENTS + '/'}>Открыть инфо</Link>
+          <h4>{user.diagnosis}</h4>
+          <Link to={DoctorUrls.PATIENTS + '/' + user.id}>Открыть инфо</Link>
         </div>
       ))}
     </div>

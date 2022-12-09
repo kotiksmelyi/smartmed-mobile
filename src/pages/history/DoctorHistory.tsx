@@ -10,7 +10,7 @@ import { useStore } from 'effector-react';
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-export const HistoryDetail = () => {
+export const DoctorHistory = () => {
   const { historyId } = useParams();
 
   const detail = useStore($quizHistoryDetail);
@@ -21,7 +21,6 @@ export const HistoryDetail = () => {
 
   return (
     <>
-      <Header text={'Дневник '} />
       {detail && (
         <>
           <BodyHeader text={detail.name} />
