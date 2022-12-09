@@ -7,4 +7,7 @@ export const urls = {
   quiz: () => '/quiz',
   quizCompleted: () => '/quiz/completed/',
   quizId: (id: string) => `/quiz/${id}`,
+
+  // articles
+  articles: () => '/articles',
 };
