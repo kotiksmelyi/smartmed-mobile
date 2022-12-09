@@ -3,11 +3,12 @@ import QuizFinishView from '@components/quiz/QuizFinishView';
 import { SwitchFormFields } from '@components/quiz/SwitchFormFields';
 
 import { useMultiStepFormNavigation } from '@hooks/useMultiStepFormNavigation';
+import { http } from '@server/http';
 
-import { quizData } from '@utils/quiz/testData';
+import { IQuizData } from '@utils/quiz/testData';
 
 import { Button } from 'antd';
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 const questionHeader = (
@@ -19,8 +20,21 @@ const questionHeader = (
 };
 
 export const Quiz: FC = () => {
+  const [quizData, setQuizData] = useState<IQuizData>([]);
+  async function getQuizData() {
+    const response = await http.get(
+      'http://78.140.241.21:8000/api/quiz/a7a991f0-acda-4fb0-99ab-cee7ac8be2c2'
+    );
+    console.log(response.data);
+    setQuizData(response.data);
+  }
+
+  useEffect(() => {
+    getQuizData();
+  }, []);
+
   const { activePage, goNext, goPrev, isFirstPage, isLastPage } =
-    useMultiStepFormNavigation(quizData.questions.length);
+    useMultiStepFormNavigation(quizData?.questions?.length || 0);
 
   const { control, handleSubmit } = useForm();
 
