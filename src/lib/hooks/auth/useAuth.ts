@@ -17,7 +17,7 @@ export const useAuth = () => {
     } else {
       const token: JwtType = JSON.parse(tokenString || '');
       setUserRole(token.role);
-      connect(token.access_token);
+      connect();
     }
   }, [navigate]);
 };

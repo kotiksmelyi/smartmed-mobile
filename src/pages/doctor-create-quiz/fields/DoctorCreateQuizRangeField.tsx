@@ -27,7 +27,7 @@ export const DoctorCreateQuizRangeField: FC<Props> = ({ index, question }) => {
   return (
     <div>
       <div>
-        <span>Dropdown</span>
+        <span>Симптом</span>
         <select onChange={handelFeature}>
           {features.map((i, index) => (
             <option key={index} value={i}>
@@ -37,7 +37,7 @@ export const DoctorCreateQuizRangeField: FC<Props> = ({ index, question }) => {
         </select>
       </div>
       <div>
-        <span>подпись к минимальному значению</span>
+        <span>Подпись к минимальному значению</span>
         <input
           defaultValue={question.min_label}
           onChange={handelInputChange('min_label')}
@@ -45,7 +45,7 @@ export const DoctorCreateQuizRangeField: FC<Props> = ({ index, question }) => {
         />
       </div>
       <div>
-        <span>минимальное значение</span>
+        <span>Минимальное значение</span>
         <input
           defaultValue={question.min_value}
           onChange={handelInputChange('min_value')}
@@ -54,7 +54,7 @@ export const DoctorCreateQuizRangeField: FC<Props> = ({ index, question }) => {
       </div>
 
       <div>
-        <span>подпись к максимальному значению</span>
+        <span>Подпись к максимальному значению</span>
         <input
           defaultValue={question.max_label}
           onChange={handelInputChange('max_label')}
@@ -62,7 +62,7 @@ export const DoctorCreateQuizRangeField: FC<Props> = ({ index, question }) => {
         />
       </div>
       <div>
-        <span>максимальное значение</span>
+        <span>Максимальное значение</span>
         <input
           defaultValue={question.max_value}
           onChange={handelInputChange('max_value')}

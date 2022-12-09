@@ -31,6 +31,12 @@ export const PatientInfo: FC = () => {
       <div>
         <BodyHeader text='История заполненных анкет пациента' />
         <div className={styles.wrapper}>
+          <img
+            className={styles.img}
+            src={
+              'http://78.140.241.21:8000/api/heatmap/?user_id=0c9c74b6-c120-4c50-861f-7d5d7129772e'
+            }
+          />
           <BodyHeader text={'Анкеты'} />
           {history?.items.map((i, key) => {
             return (

@@ -5,6 +5,7 @@ import { useAuthNavigate } from '@hooks/auth/useAuthNavigate';
 import { LoginApiProps } from '@type/auth/authType';
 
 import { loginFx, setUserRole } from '@store/auth/authStore';
+import { connect } from '@store/ws/socketStore';
 
 import { FC } from 'react';
 import { useForm } from 'react-hook-form';
@@ -18,6 +19,7 @@ export const LoginPage: FC = () => {
   const login = async (data: LoginApiProps) => {
     const res = await loginFx(data);
     setUserRole(res.role);
+    connect();
     navigate(res.role);
   };
 

@@ -12,6 +12,7 @@ import { PatientInfo } from '@pages/patients/PatientInfo';
 import { Patients } from '@pages/patients/Patients';
 import { Prescription } from '@pages/prescription/Prescription';
 import { QuizPage } from '@pages/quiz/QuizPage';
+import { SendAlert } from '@pages/send-alert/SendAlert';
 
 import ClientLayout from '@components/layout/client-layout/ClientLayout';
 import DoctorLayout from '@components/layout/doctor-layout/DoctorLayout';
@@ -38,6 +39,7 @@ function App() {
         {role === UserRole.client && (
           <Route path={ClientUrls.MAIN} element={<ClientLayout />}>
             <Route path={ClientUrls.HOME} element={<ClientHomePage />} />
+            {/*<Route path={ClientUrls.ALERT} element={<SendAlert />} />*/}
             <Route path={ClientUrls.QUIZ} element={<QuizPage />} />
             <Route path={ClientUrls.HISTORY} element={<History />} />
             <Route

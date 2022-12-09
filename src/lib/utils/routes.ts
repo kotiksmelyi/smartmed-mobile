@@ -2,6 +2,7 @@ export enum ClientUrls {
   MAIN = '/client',
   HOME = '',
   HISTORY = '/client/history',
+  ALERT = '/client/alert',
   HISTORY_DETAIL = '/client/history/:historyId',
   PRESCRIPTION = '/client/prescription',
   ARTICLES = '/client/articles',

@@ -16,6 +16,11 @@ export const footerIcons = [
     icon: <HistoryIcon />,
     link: ClientUrls.HISTORY,
   },
+  // {
+  //   name: 'Экстренный вызов',
+  //   icon: <ExclamationCircleOutlined />,
+  //   link: ClientUrls.ALERT,
+  // },
   {
     name: 'Назначения',
     icon: <PillsIcon />,
