@@ -8,7 +8,7 @@ import {
   $createQuizFields,
   addQuizField,
   createQuizFx,
-} from '@store/doctor-create-quiz/creatQuizStore';
+} from '@store/doctor/create-quiz/creatQuizStore';
 
 import { useList, useStore } from 'effector-react';
 import { ChangeEvent, FC, useRef } from 'react';

@@ -1,9 +1,9 @@
 import {
   ChangeQuizField,
   DoctorCreateQuizFieldType,
-} from '@type/doctor-create-quiz/doctorCreateQuizType';
+} from '@type/doctor/doctor-create-quiz/doctorCreateQuizType';
 
-import { initValue } from '@store/doctor-create-quiz/creatQuizStore';
+import { initValue } from '@store/doctor/create-quiz/creatQuizStore';
 
 import produce from 'immer';
 

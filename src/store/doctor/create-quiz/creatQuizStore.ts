@@ -5,13 +5,13 @@ import {
   ChangeQuizField,
   DoctorCreateQuizFieldType,
   PostDoctorQuiz,
-} from '@type/doctor-create-quiz/doctorCreateQuizType';
+} from '@type/doctor/doctor-create-quiz/doctorCreateQuizType';
 
 import {
   handelAddQuiz,
   handelChangeQuiz,
   handelRemoveQuiz,
-} from '@store/doctor-create-quiz/doctorCreateQuizeHandlers';
+} from '@store/doctor/create-quiz/doctorCreateQuizeHandlers';
 
 import {
   attach,

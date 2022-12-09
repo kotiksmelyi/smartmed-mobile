@@ -1,25 +1,23 @@
 import { DoctorUrls } from '@utils/routes';
 
-import { FC } from 'react';
+import { $quizList, fetchQuizListFx } from '@store/doctor/quiz/quizStore';
+
+import { useStore } from 'effector-react';
+import { FC, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import styles from './doctorquiz.module.scss';
 
 export const DoctorQuiz: FC = () => {
-  const testData = [
-    {
-      id: 5,
-      title: 'Общее самочувствие',
-      questions: 5,
-      diagnosis: 'J03.9 — Острый тонзиллит',
-    },
-    {
-      id: 6,
-      title: 'Детальный опрос',
-      questions: 15,
-      diagnosis: 'J03.9 — Острый тонзиллит',
-    },
-  ];
+  const list = useStore($quizList);
+
+  useEffect(() => {
+    fetchQuizListFx();
+  }, []);
+
+  if (!list) return null;
+
+  if (list.items.length) return <div>Нет данных</div>;
 
   return (
     <div className={styles.wrapper}>
@@ -27,13 +25,12 @@ export const DoctorQuiz: FC = () => {
         <h1>Мои анкеты</h1>
         <Link to={DoctorUrls.CREAT_QUIZ}>+</Link>
       </div>
-      {testData.map((option) => (
-        <div key={option.id} className={styles.cardwrapper}>
+      {list.items.map((quiz) => (
+        <div key={quiz.id} className={styles.cardwrapper}>
           <div>
-            <h4>{option.title}</h4>
-            <p>Кол-во вопросов: {option.questions}</p>
+            <h4>{quiz.name}</h4>
+            <p>Кол-во вопросов: {quiz.address_count}</p>
           </div>
-          <h4>{option.diagnosis}</h4>
           <button>Открыть инфо</button>
         </div>
       ))}

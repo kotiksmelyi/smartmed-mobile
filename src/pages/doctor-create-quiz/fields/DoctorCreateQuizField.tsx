@@ -3,12 +3,12 @@ import { DoctorCreateQuizRangeField } from '@pages/doctor-create-quiz/fields/Doc
 
 import { BodyHeader } from '@components/body/BodyHeader';
 
-import { DoctorCreateQuizFieldType } from '@type/doctor-create-quiz/doctorCreateQuizType';
+import { DoctorCreateQuizFieldType } from '@type/doctor/doctor-create-quiz/doctorCreateQuizType';
 
 import {
   changeQuizField,
   removeQuizField,
-} from '@store/doctor-create-quiz/creatQuizStore';
+} from '@store/doctor/create-quiz/creatQuizStore';
 
 import React, { ChangeEvent, FC, useCallback, useState } from 'react';
 

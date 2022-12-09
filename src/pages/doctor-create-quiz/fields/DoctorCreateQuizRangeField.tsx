@@ -1,6 +1,6 @@
-import { DoctorCreateQuizFieldType } from '@type/doctor-create-quiz/doctorCreateQuizType';
+import { DoctorCreateQuizFieldType } from '@type/doctor/doctor-create-quiz/doctorCreateQuizType';
 
-import { changeQuizField } from '@store/doctor-create-quiz/creatQuizStore';
+import { changeQuizField } from '@store/doctor/create-quiz/creatQuizStore';
 
 import React, { ChangeEvent, FC } from 'react';
 
