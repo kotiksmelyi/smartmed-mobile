@@ -2,150 +2,175 @@
   {
     "id": "6391a978ba6b613a34c08eab",
     "date": "2014-01-01",
+    "feature": "Боль в горле",
     "percent": 54,
     "label": "0:"
   },
   {
     "id": "6391a9787638a2d9f235a6d4",
     "date": "2014-01-01",
+    "feature": "Боль в горле",
     "percent": 84,
     "label": "1:"
   },
   {
     "id": "6391a978a2358f0d6b3c0dde",
     "date": "2014-01-01",
+    "feature": "Боль в горле",
     "percent": 68,
     "label": "2:"
   },
   {
     "id": "6391a978b842b1418c02149c",
     "date": "2014-01-01",
+    "feature": "Боль в горле",
     "percent": 83,
     "label": "3:"
   },
   {
     "id": "6391a97877a491083f574b68",
     "date": "2014-01-01",
+    "feature": "Боль в горле",
     "percent": 34,
     "label": "4:"
   },
   {
     "id": "6391a98fcbd187ca82f8caf8",
     "date": "2014-01-02",
+    "feature": "Боль в горле",
     "percent": 78,
     "label": "0:"
   },
   {
     "id": "6391a98f90eb05194b2adb95",
     "date": "2014-01-02",
+    "feature": "Боль в горле",
     "percent": 63,
     "label": "1:"
   },
   {
     "id": "6391a98f3386d43476babfcb",
     "date": "2014-01-02",
+    "feature": "Боль в горле",
     "percent": 83,
     "label": "2:"
   },
   {
     "id": "6391a98fd7ffb03b95ab2c7b",
     "date": "2014-01-02",
+    "feature": "Боль в горле",
     "percent": 97,
     "label": "3:"
   },
   {
     "id": "6391a98fd3edf130d97a38a6",
     "date": "2014-01-02",
+    "feature": "Боль в горле",
     "percent": 21,
     "label": "4:"
   },
   {
     "id": "6391a99eb3ba098fc811bc1f",
     "date": "2014-01-03",
+    "feature": "Боль в горле",
     "percent": 43,
     "label": "0:"
   },
   {
     "id": "6391a99ec9becbb268a5a775",
     "date": "2014-01-03",
+    "feature": "Боль в горле",
     "percent": 47,
     "label": "1:"
   },
   {
     "id": "6391a99e827661c64317e26f",
     "date": "2014-01-03",
+    "feature": "Боль в горле",
     "percent": 8,
     "label": "2:"
   },
   {
     "id": "6391a99ef4c160815c0f16a0",
     "date": "2014-01-03",
+    "feature": "Боль в горле",
     "percent": 98,
     "label": "3:"
   },
   {
     "id": "6391a99eabd7c3365d495ab8",
     "date": "2014-01-03",
+    "feature": "Боль в горле",
     "percent": 38,
     "label": "4:"
   },
   {
     "id": "6391a9afdcfeb1cc5db9c714",
     "date": "2014-01-04",
+    "feature": "Боль в горле",
     "percent": 8,
     "label": "0:"
   },
   {
     "id": "6391a9af2257608ac6a70c89",
     "date": "2014-01-04",
+    "feature": "Боль в горле",
     "percent": 86,
     "label": "1:"
   },
   {
     "id": "6391a9afeaef5a8904e81006",
     "date": "2014-01-04",
+    "feature": "Боль в горле",
     "percent": 34,
     "label": "2:"
   },
   {
     "id": "6391a9af205ba695b5959a8d",
     "date": "2014-01-04",
+    "feature": "Боль в горле",
     "percent": 27,
     "label": "3:"
   },
   {
     "id": "6391a9afc01da8aeaf769745",
     "date": "2014-01-04",
+    "feature": "Боль в горле",
     "percent": 20,
     "label": "4:"
   },
   {
     "id": "6391a9b9b114f45f6e290069",
     "date": "2014-01-05",
+    "feature": "Боль в горле",
     "percent": 58,
     "label": "0:"
   },
   {
     "id": "6391a9b9c39d9d61cb02b9c8",
     "date": "2014-01-05",
+    "feature": "Боль в горле",
     "percent": 12,
     "label": "1:"
   },
   {
     "id": "6391a9b9fbba302dd5ef4c58",
     "date": "2014-01-05",
+    "feature": "Боль в горле",
     "percent": 19,
     "label": "2:"
   },
   {
     "id": "6391a9b927d7d3c22c13e01c",
     "date": "2014-01-05",
+    "feature": "Боль в горле",
     "percent": 54,
     "label": "3:"
   },
   {
     "id": "6391a9b9baca75bf3831e0c6",
     "date": "2014-01-05",
+    "feature": "Боль в горле",
     "percent": 25,
     "label": "4:"
   }

@@ -5,24 +5,14 @@ import styles from './patients.module.scss';
 
 const testData = [
   {
-    name: 'name',
+    name: 'Тимур',
     birthday: '20.04.2002',
     diagnosis: 'J03.9 — Острый тонзиллит',
   },
   {
-    name: 'wrfqww',
+    name: 'Алексей',
     birthday: '1.01.2001',
-    diagnosis: 'J03.9 — Острый тонзиллит',
-  },
-  {
-    name: 'wewewe',
-    birthday: '20.04.2002',
-    diagnosis: 'J03.9 — Острый тонзиллит',
-  },
-  {
-    name: 'name',
-    birthday: '20.04.2002',
-    diagnosis: 'J03.9 — Острый тонзиллит',
+    diagnosis: 'Фарингит',
   },
 ];
 
@@ -40,7 +30,7 @@ export const Patients: FC = () => {
             <p>{option.birthday}</p>
           </div>
           <h4>{option.diagnosis}</h4>
-          <button>Открыть инфо</button>
+          <Link to={'/doctor/patientinfo'}>Открыть инфо</Link>
         </div>
       ))}
     </div>
