@@ -15,4 +15,7 @@ export const urls = {
   // users
   users: () => '/users',
   userId: (id: string) => `/users/${id}`,
+
+  // feature
+  features: () => '/features',
 };

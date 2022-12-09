@@ -1,7 +1,11 @@
 import { DoctorCreateQuizFieldType } from '@type/doctor/doctor-create-quiz/doctorCreateQuizType';
 
-import { changeQuizField } from '@store/doctor/create-quiz/creatQuizStore';
+import {
+  $featureList,
+  changeQuizField,
+} from '@store/doctor/create-quiz/creatQuizStore';
 
+import { useStore } from 'effector-react';
 import React, { ChangeEvent, FC } from 'react';
 
 type Props = {
@@ -14,9 +18,24 @@ export const DoctorCreateQuizRangeField: FC<Props> = ({ index, question }) => {
     (key: string) => (e: ChangeEvent<HTMLInputElement>) => {
       changeQuizField({ index, field: { ...question, [key]: e.target.value } });
     };
+  const features = useStore($featureList);
+
+  const handelFeature = (e: ChangeEvent<HTMLSelectElement>) => {
+    changeQuizField({ index, field: { ...question, feature: e.target.value } });
+  };
 
   return (
     <div>
+      <div>
+        <span>Dropdown</span>
+        <select onChange={handelFeature}>
+          {features.map((i, index) => (
+            <option key={index} value={i}>
+              {i}
+            </option>
+          ))}
+        </select>
+      </div>
       <div>
         <span>подпись к минимальному значению</span>
         <input

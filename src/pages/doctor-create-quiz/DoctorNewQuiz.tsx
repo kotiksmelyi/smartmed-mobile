@@ -8,10 +8,11 @@ import {
   $createQuizFields,
   addQuizField,
   createQuizFx,
+  featureFeatureListFx,
 } from '@store/doctor/create-quiz/creatQuizStore';
 
 import { useList, useStore } from 'effector-react';
-import { ChangeEvent, FC, useRef } from 'react';
+import { ChangeEvent, FC, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import styles from './doctornewquiz.module.scss';
@@ -20,6 +21,10 @@ export const DoctorNewQuiz: FC = () => {
   const questions = useList($createQuizFields, (question, key) => (
     <DoctorCreateQuizField index={key} question={question} key={key} />
   ));
+
+  useEffect(() => {
+    featureFeatureListFx().then();
+  }, []);
 
   const quizNameInput = useRef<HTMLInputElement>(null);
 

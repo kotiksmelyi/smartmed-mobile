@@ -57,6 +57,16 @@ export const createQuizFx = attach({
   }),
 });
 
+export const featureFeatureListFx = createEffect(async () => {
+  const res = await http.get(urls.features());
+  return res.data;
+});
+
+export const $featureList = createStore<string[]>([]).on(
+  featureFeatureListFx.doneData,
+  (_, payload) => payload
+);
+
 forward({
   from: createQuizFx.doneData,
   to: clearQuizFields,
