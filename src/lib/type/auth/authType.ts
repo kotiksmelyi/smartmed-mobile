@@ -4,8 +4,8 @@ export interface LoginApiProps {
 }
 
 export interface JwtType {
-  access: string;
-  refresh: string;
+  access_token: string;
+  refresh_token: string;
   role: UserRole;
 }
 

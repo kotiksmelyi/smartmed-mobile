@@ -17,7 +17,7 @@ export const DoctorQuiz: FC = () => {
 
   if (!list) return null;
 
-  if (list.items.length) return <div>Нет данных</div>;
+  if (!list.items.length) return <div>Нет данных</div>;
 
   return (
     <div className={styles.wrapper}>
@@ -29,7 +29,7 @@ export const DoctorQuiz: FC = () => {
         <div key={quiz.id} className={styles.cardwrapper}>
           <div>
             <h4>{quiz.name}</h4>
-            <p>Кол-во вопросов: {quiz.address_count}</p>
+            <p>Кол-во вопросов: {quiz.question_count}</p>
           </div>
           <button>Открыть инфо</button>
         </div>
