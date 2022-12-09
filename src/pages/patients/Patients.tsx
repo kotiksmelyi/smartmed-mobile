@@ -1,3 +1,5 @@
+import { DoctorUrls } from '@utils/routes';
+
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -21,7 +23,7 @@ export const Patients: FC = () => {
     <div className={styles.wrapper}>
       <div className={styles.headwrapper}>
         <h1>Пациенты</h1>
-        <Link to={'*'}>+</Link>
+        {/*<Link to={'*'}>+</Link>*/}
       </div>
       {testData.map((option, index) => (
         <div key={index} className={styles.cardwrapper}>
@@ -30,7 +32,7 @@ export const Patients: FC = () => {
             <p>{option.birthday}</p>
           </div>
           <h4>{option.diagnosis}</h4>
-          <Link to={'/doctor/patientinfo'}>Открыть инфо</Link>
+          <Link to={DoctorUrls.PATIENTS + '/'}>Открыть инфо</Link>
         </div>
       ))}
     </div>

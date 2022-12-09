@@ -7,6 +7,7 @@ import { ClientHomePage } from '@pages/home/ClientHomePage';
 import { HomePage } from '@pages/home/HomePage';
 import { LoginPage } from '@pages/login/LoginPage';
 import { NotFound } from '@pages/not-found/NotFound';
+import { PatientInfo } from '@pages/patients/PatientInfo';
 import { Patients } from '@pages/patients/Patients';
 import { Prescription } from '@pages/prescription/Prescription';
 import { QuizPage } from '@pages/quiz/QuizPage';
@@ -26,7 +27,6 @@ import { useStore } from 'effector-react';
 import { Route, Routes } from 'react-router-dom';
 
 import './App.scss';
-import { PatientInfo } from '@pages/patients/PatientInfo';
 
 function App() {
   useAuth();
@@ -52,7 +52,7 @@ function App() {
             <Route path={DoctorUrls.HOME} element={<DoctorQuiz />} />
             <Route path={DoctorUrls.CREAT_QUIZ} element={<DoctorNewQuiz />} />
             <Route path={DoctorUrls.PATIENTS} element={<Patients />} />
-            <Route path={DoctorUrls.PATIENTINFO} element={<PatientInfo />} />
+            <Route path={DoctorUrls.PATIENT_INFO} element={<PatientInfo />} />
           </Route>
         )}
 

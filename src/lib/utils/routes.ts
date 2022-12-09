@@ -11,8 +11,8 @@ export enum DoctorUrls {
   MAIN = '/doctor',
   HOME = '',
   PATIENTS = '/doctor/patients',
+  PATIENT_INFO = '/doctor/patients/:id',
   CREAT_QUIZ = '/doctor/create-quiz',
-  PATIENTINFO = '/doctor/patientinfo',
 }
 
 export enum GlobalUrls {
