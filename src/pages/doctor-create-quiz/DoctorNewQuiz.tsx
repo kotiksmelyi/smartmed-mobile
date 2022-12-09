@@ -1,86 +1,60 @@
-import { BodyHeader } from '@components/body/BodyHeader';
-import { RangeInput } from '@components/quiz/RangeInput';
+import { DoctorCreateQuizField } from '@pages/doctor-create-quiz/fields/DoctorCreateQuizField';
 
-import { FC } from 'react';
-import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
+import { BodyHeader } from '@components/body/BodyHeader';
+
+import { DoctorUrls } from '@utils/routes';
+
+import {
+  $createQuizFields,
+  addQuizField,
+  createQuizFx,
+} from '@store/doctor/create-quiz/creatQuizStore';
+
+import { useList, useStore } from 'effector-react';
+import { ChangeEvent, FC, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import styles from './doctornewquiz.module.scss';
 
-const quizdataDoc = {
-  name: 'string',
-  questions: [
-    {
-      type: 'textarea',
-      text: 'string',
-      order: 0,
-      feature: 'string',
-      min_label: 'string',
-      max_label: 'string',
-    },
-  ],
-};
-
-const testDataSympthoms = [
-  'Головная боль',
-  'Боль в другом месте',
-  'Температура',
-];
-
 export const DoctorNewQuiz: FC = () => {
-  const { register, handleSubmit } = useForm();
-  const onSubmit: SubmitHandler<FieldValues> = (data) => console.log(data);
+  const questions = useList($createQuizFields, (question, key) => (
+    <DoctorCreateQuizField index={key} question={question} key={key} />
+  ));
+
+  const quizNameInput = useRef<HTMLInputElement>(null);
+
+  const navigate = useNavigate();
+
+  const handelSubmit = async (e: ChangeEvent<EventTarget>) => {
+    e.preventDefault();
+    const quizName = quizNameInput.current?.value;
+    await createQuizFx(quizName || '');
+    navigate(DoctorUrls.MAIN);
+  };
+
+  const loading = useStore(createQuizFx.pending);
 
   return (
     <div className={styles.wrapper}>
       <h1>Новая анкета</h1>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handelSubmit}>
         <div className={styles.cardwrapper}>
           <BodyHeader text='Название анкеты' />
           <input
+            ref={quizNameInput}
             type='text'
             placeholder='Введите название анкеты'
-            {...register('name')}
           />
         </div>
 
-        <div className={styles.cardwrapper}>
-          <BodyHeader text='Вопрос 1' />
-          <div>
-            <input
-              placeholder='Текст вопроса'
-              type='text'
-              {...register('questions.0.text')}
-            />
-            <select {...register('questions.0.type')}>
-              <option value='textarea'>Текст</option>
-              <option value='range'>Шкала</option>
-            </select>
-          </div>
-        </div>
+        {questions}
 
-        <div className={styles.cardwrapper}>
-          <BodyHeader text='Вопрос 2' />
-          <div className={styles.headwrapper}>
-            <input
-              placeholder='Текст вопроса'
-              type='text'
-              {...register('questions.1.text')}
-            />
-            <select {...register('questions.1.type')}>
-              <option value='textarea'>Текст</option>
-              <option value='range'>Шкала</option>
-            </select>
-            животных
-            <div className={styles.rangewrapper}>
-              <select></select>
-              <RangeInput />
-            </div>
-          </div>
-        </div>
+        <button type={'button'} onClick={() => addQuizField()}>
+          +
+        </button>
 
-        <button type={'button'}>+</button>
-
+        {loading && <div>Loading...</div>}
         <button className={styles.submit}>Сохранить</button>
       </form>
     </div>

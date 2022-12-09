@@ -1,6 +1,9 @@
 .heatMap {
   margin-top: 30px;
 
+  & svg {
+    background-color: red;
+  }
   &__axis {
     color: red;
   }

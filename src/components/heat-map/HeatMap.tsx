@@ -18,8 +18,8 @@ const getColor = scaleLinear<string, number>()
 
 const format = timeFormat('%m %d');
 
-const margin = { top: 30, right: 30, bottom: 30, left: 30 };
-const width = 450 - margin.left - margin.right;
+const margin = { top: 30, right: 10, bottom: 30, left: 30 };
+const width = 700 - margin.left - margin.right;
 const height = 450 - margin.top - margin.bottom;
 
 export const HeatMap: FC<Props> = ({ data }) => {
@@ -52,7 +52,7 @@ export const HeatMap: FC<Props> = ({ data }) => {
               <text
                 key={index}
                 className={styles.heatMap__axis}
-                y={40}
+                // y={40}
                 x={dateScale(date)}
               >
                 {format(date)}
